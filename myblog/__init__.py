@@ -10,6 +10,7 @@ from flask_wtf.csrf import CSRFError
 from flask_login import current_user
 from flask_sqlalchemy import get_debug_queries
 from logging.handlers import SMTPHandler, RotatingFileHandler
+from myblog.commands import register_commands
 import click
 import logging
 
@@ -17,7 +18,7 @@ basedir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 def creat_app(config_name=None):
     if config_name==None:
-        config_name = os.getenv('FLASK_CONFIG', 'development')
+        config_name = os.getenv('FLASK_ENV', 'development')
     app = Flask('myblog')
     app.config.from_object(config[config_name])
     # register_logging(app)
@@ -78,74 +79,6 @@ def register_logging(app):
         app.logger.addHandler(file_handler)
 
 
-def register_commands(app):
-    @app.cli.command()
-    @click.option('--drop',is_flag=True,help="Create atfer drop")
-    def initdb(drop):
-        if drop:
-            click.confirm("this operation will delete the database,do you want to continue?",abort=True)
-            db.drop_all()
-            click.echo('Drop tables')
-        db.create_all()
-        click.echo('Initilize database')
-
-    @app.cli.command()
-    @click.option('--username',prompt=True,help="the username used to login")
-    @click.option('--password',prompt=True,hide_input=True,confirmation_prompt=True,help="the password used to login")
-    def init(username,password):
-        click.echo('initilize the database')
-        db.create_all()
-        admin=Admin.query.first()
-        if admin is not None:
-            click.echo("the administrator already exists, updating...")
-            admin.username=username
-            admin.set_password(password)
-        else:
-            click.echo("Creating the temporary adminstrator account")
-            admin=Admin(
-                username=username,
-                blog_title='Bluelog',
-                blog_sub_title="No, I'm the real thing.",
-                name='Admin',
-                about='Anything about you.'
-            )
-            admin.set_password(password)
-            db.session.add(admin)
-
-        category=Category.query.first()
-        if category is None:
-            click.echo("Creating the default category...")
-            category=Category(name='Default')
-            db.session.add(category)
-
-        db.session.commit()
-        click.echo('None')
-
-    @app.cli.command()
-    @click.option('--category',default=10,help="quantity of categoies,default is 10")
-    @click.option('--post',default=50,help="quantity of posts,default is 50")
-    @click.option('--comment',default=500,help="quantity of commnents,default is 500")
-    def forge(category,post,comment):
-        from myblog.fakes import fake_posts,fake_comments,fake_categories,fake_admin,fake_links
-
-        db.drop_all()
-        db.create_all()
-        click.echo('Generating the administrator...')
-        fake_admin()
-
-        click.echo("Generating %d categories..." % category)
-        fake_categories(category)
-
-        click.echo("Generating %d posts" % post)
-        fake_posts(post)
-
-        click.echo('Generating %d comments' % comment)
-        fake_comments(comment)
-
-        click.echo("Generating links")
-        fake_links()
-
-        click.echo("ok")
 
 def register_errors(app):
     @app.errorhandler(400)

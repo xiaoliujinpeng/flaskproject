@@ -1,6 +1,6 @@
 {% from 'bootstrap/nav.html' import render_nav_item %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     {% block head %}
         <meta charset="utf-8">
@@ -78,13 +78,15 @@
             {{ message[1] }}
         </div>
     {% endfor %}
+    <section class="main_content">
     {% block content %}{% endblock content %}
+    </section>
     {% block footer %}
-        <footer>
+        <footer class="footer">
             <p class="float-left">
-                <small> &copy; 2018 <a href="http://greyli.com" title="Written by Grey Li">Grey Li</a> -
-                    <a href="https://github.com/greyli/bluelog" title="Fork me on GitHub">GitHub</a> -
-                    <a href="http://helloflask.com" title="A HelloFlask project">HelloFlask</a>
+                <small> &copy; 2021 <a href="http://www.cumt-ljp.ltd">ljp</a>
+<!--                    <a href="https://github.com/greyli/bluelog" title="Fork me on GitHub">GitHub</a> - -->
+<!--                    <a href="http://helloflask.com" title="A HelloFlask project">HelloFlask</a>-->
                 </small>
             </p>
             <p class="float-right">
