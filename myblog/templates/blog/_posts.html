@@ -1,19 +1,18 @@
 {% if posts %}
     {% for post in posts %}
-        <h3 class="text-primary"><a href="{{ url_for('.show_post', post_id=post.id) }}">{{ post.title }}</a></h3>
-        <p>
-            {{ post.body|striptags|truncate }}
-            <small><a href="{{ url_for('.show_post', post_id=post.id) }}">Read More</a></small>
-        </p>
-        <small>
-        &nbsp;
-            Category: <a
-                href="{{ url_for('.show_category', category_id=post.category.id) }}">{{ post.category.name }}</a>
-            <span class="float-right">{{ moment(post.timestamp).format('LL') }}</span>
-        </small>
-        {% if not loop.last %}
-            <hr>
-        {% endif %}
+        <section class="article_about">
+            <h3 class="text-primary"><a href="{{ url_for('.show_post_by_name', name=post.title) }}">{{ post.title }}</a></h3>
+            <p>
+                {{ post.body|striptags|truncate }}
+                <small><a href="{{ url_for('.show_post_by_name', name=post.title) }}">更多</a></small>
+            </p>
+            <small>
+            &nbsp;
+                目录: <a
+                    href="{{ url_for('.show_category', category_id=post.category.id) }}">{{ post.category.name }}</a>
+                <span class="float-right">{{ post.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</span>
+            </small>
+        </section>
     {% endfor %}
 {% else %}
     <div class="tip">

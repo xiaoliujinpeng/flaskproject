@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
 {% from 'bootstrap/pagination.html' import render_pager %}
 
-{% block title %}Home{% endblock %}
-
 {% block content %}
     <div class="page-header">
-        <h1 class="display-3">{{ admin.blog_title|default('Blog Title') }}</h1>
+        <h1 class="display-3">主页</h1>
         <h4 class="text-muted">&nbsp;{{ admin.blog_sub_title|default('Blog Subtitle') }}</h4>
     </div>
     <div class="row">

@@ -5,7 +5,7 @@ from myblog.blueprints.blog import blog_bp
 from myblog.blueprints.auth import auth_bp
 from myblog.settings import config
 from myblog.extensions import db,mail,bootstrap,moment,ckeditor,login_manager,csrf
-from myblog.models import Admin,Comment,Category,Post,Link
+from myblog.models import Admin,Category,Post,Link
 from flask_wtf.csrf import CSRFError
 from flask_login import current_user
 from flask_sqlalchemy import get_debug_queries
@@ -22,6 +22,7 @@ def creat_app(config_name=None):
     app = Flask('myblog')
     app.config.from_object(config[config_name])
     # register_logging(app)
+
     register_extensions(app)
     register_blueprint(app)
     register_commands(app)
@@ -109,13 +110,10 @@ def register_template_context(app):
         admin=Admin.query.first()
         categories=Category.query.order_by(Category.name).all()
         links=Link.query.order_by(Link.name).all()
-        if current_user.is_authenticated:
-            unread_comments=Comment.query.filter_by(reviewed=False).count()
-        else:
-            unread_comments=None
+
         return dict(
             admin=admin,categories=categories,
-            links=links,unread_comments=unread_comments
+            links=links
         )
 
 def register_request_handlers(app):

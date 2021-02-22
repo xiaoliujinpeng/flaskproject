@@ -13,10 +13,11 @@ class LoginForm(FlaskForm):
 
 
 class PostForm(FlaskForm):
-    title=StringField('Title',validators=[DataRequired(),Length(1,60)])
-    category=SelectField('Category',coerce=int,default=1)
-    body=CKEditorField('Body',validators=[DataRequired()])
-    submit=SubmitField()
+    title=StringField('标题',validators=[DataRequired(),Length(1,60)])
+    category=SelectField('目录',coerce=int,default=1)
+    body=CKEditorField('内容')
+    body_editormd=TextAreaField("内容",validators=[DataRequired()])
+    submit=SubmitField("提交")
 
     def __init__(self,*args,**kwargs):
         super(PostForm,self).__init__(*args,**kwargs)

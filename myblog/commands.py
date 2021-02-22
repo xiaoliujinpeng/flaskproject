@@ -27,7 +27,7 @@ def register_commands(app):
             click.echo("Creating the temporary adminstrator account")
             admin=Admin(
                 username=username,
-                blog_title='Bluelog',
+                blog_title='主页',
                 blog_sub_title="No, I'm the real thing.",
                 name='Admin',
                 about='Anything about you.'
@@ -49,7 +49,7 @@ def register_commands(app):
     @click.option('--post',default=50,help="quantity of posts,default is 50")
     @click.option('--comment',default=500,help="quantity of commnents,default is 500")
     def forge(category,post,comment):
-        from myblog.fakes import fake_posts,fake_comments,fake_categories,fake_admin,fake_links
+        from myblog.fakes import fake_posts,fake_categories,fake_admin,fake_links
 
         db.drop_all()
         db.create_all()
@@ -62,8 +62,7 @@ def register_commands(app):
         click.echo("Generating %d posts" % post)
         fake_posts(post)
 
-        click.echo('Generating %d comments' % comment)
-        fake_comments(comment)
+
 
         click.echo("Generating links")
         fake_links()
