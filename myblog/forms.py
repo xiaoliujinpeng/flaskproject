@@ -23,17 +23,17 @@ class PostForm(FlaskForm):
         self.category.choices=[(category.id,category.name) for category in Category.query.order_by(Category.name).all()]
 
 
-class CommentForm(FlaskForm):
-    author=StringField('Name',validators=[DataRequired(),Length(1,30)])
-    email=StringField('Email',validators=[DataRequired(),Email(),Length(1,254)])
-    site=StringField('Site',validators=[Optional(),URL(),Length(0,255)])
-    body=TextAreaField('Comment',validators=[DataRequired()])
-    submit=SubmitField()
-
-class AdminCommentForm(CommentForm):
-    author=HiddenField()
-    email=HiddenField()
-    site=HiddenField()
+# class CommentForm(FlaskForm):
+#     author=StringField('Name',validators=[DataRequired(),Length(1,30)])
+#     email=StringField('Email',validators=[DataRequired(),Email(),Length(1,254)])
+#     site=StringField('Site',validators=[Optional(),URL(),Length(0,255)])
+#     body=TextAreaField('Comment',validators=[DataRequired()])
+#     submit=SubmitField()
+#
+# class AdminCommentForm(CommentForm):
+#     author=HiddenField()
+#     email=HiddenField()
+#     site=HiddenField()
 
 class LinkForm(FlaskForm):
     name=StringField('Name',validators=[DataRequired(),Length(1,30)])
