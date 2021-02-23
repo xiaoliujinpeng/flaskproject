@@ -1,6 +1,6 @@
 import click
 from myblog.extensions import db
-from myblog.models import Admin,Category
+from myblog.models import Admin,Category,Post
 def register_commands(app):
     @app.cli.command()
     @click.option('--drop',is_flag=True,help="Create atfer drop")
@@ -47,8 +47,7 @@ def register_commands(app):
     @app.cli.command()
     @click.option('--category',default=10,help="quantity of categoies,default is 10")
     @click.option('--post',default=50,help="quantity of posts,default is 50")
-    @click.option('--comment',default=500,help="quantity of commnents,default is 500")
-    def forge(category,post,comment):
+    def forge(category,post):
         from myblog.fakes import fake_posts,fake_categories,fake_admin,fake_links
 
         db.drop_all()
@@ -68,3 +67,10 @@ def register_commands(app):
         fake_links()
 
         click.echo("ok")
+
+
+
+def register_shell_context(app):
+    @app.shell_context_processor
+    def make_shell_context():
+        return dict(db=db,Admin=Admin,Post=Post,Category=Category)

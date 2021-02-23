@@ -1,4 +1,4 @@
-from flask import send_from_directory,current_app,Blueprint,flash,redirect,url_for,render_template,request
+from flask import send_from_directory,current_app,Blueprint,flash,redirect,url_for,render_template,request,abort
 from flask_login import login_required,current_user
 from myblog.forms import SettingForm,PostForm,CategoryForm,LinkForm
 from myblog.extensions import db
@@ -223,6 +223,7 @@ def get_image(filename):
 
 
 @admin_bp.route('/upload',methods=['POST'])
+@login_required
 def upload_image():
     f=request.files.get('upload')
     if not allowed_file(f.filename):
@@ -232,3 +233,19 @@ def upload_image():
     return upload_success(url,f.filename)
 
 
+@admin_bp.route("/upload/file",methods=["POST"])
+@login_required
+def upload_file():
+
+    title=request.form.get("title")
+    category=Category.query.get(request.form.get("category"))
+    file=request.files["uploadFile"]
+    body=file.read().decode("utf-8")
+    print(body)
+    if body=="":
+        abort(400)
+    post=Post(title=title,category=category,body=body)
+    db.session.add(post)
+    db.session.commit()
+    flash("上传成功")
+    return redirect(url_for("blog.show_post",post_id=post.id))

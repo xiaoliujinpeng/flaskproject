@@ -4,7 +4,7 @@
             <h3 class="text-primary"><a href="{{ url_for('.show_post_by_name', name=post.title) }}">{{ post.title }}</a></h3>
             <p>
                 {{ post.body|striptags|truncate }}
-                <small><a href="{{ url_for('.show_post_by_name', name=post.title) }}">更多</a></small>
+                <small><a href="{{ url_for('blog.show_post_by_name', name=post.title) }}">更多</a></small>
             </p>
             <small>
             &nbsp;

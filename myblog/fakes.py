@@ -1,4 +1,4 @@
-from myblog.models import Admin,Category,Post,Comment,Link
+from myblog.models import Admin,Category,Post,Link
 from myblog.extensions import db
 from faker import Faker
 from sqlalchemy.exc import IntegrityError
@@ -11,10 +11,10 @@ def fake_admin():
         username='admin',
         blog_title='Bluelog',
         blog_sub_title="No, i am the real thing",
-        name='Mima kirigoe',
+        name='刘金鹏',
         about='u, i...'
     )
-    admin.set_password('helloflask')
+    admin.set_password('12345678')
     db.session.add(admin)
     db.session.commit()
 
@@ -38,6 +38,8 @@ def fake_posts(count=50):
             category=Category.query.get(random.randint(1,Category.query.count())),
             timestamp=fake.date_time_this_year()
         )
+        print(post.category)
+        print(i)
         db.session.add(post)
     db.session.commit()
 

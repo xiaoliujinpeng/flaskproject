@@ -10,8 +10,8 @@ from flask_wtf.csrf import CSRFError
 from flask_login import current_user
 from flask_sqlalchemy import get_debug_queries
 from logging.handlers import SMTPHandler, RotatingFileHandler
-from myblog.commands import register_commands
-import click
+from myblog.commands import register_commands,register_shell_context
+
 import logging
 
 basedir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
@@ -97,10 +97,7 @@ def register_errors(app):
         return render_template('errors/400.html',descripiton=e.descripition),400
 
 
-def register_shell_context(app):
-    @app.shell_context_processor
-    def make_shell_context():
-        return dict(db=db,Admin=Admin,Post=Post,Category=Category,Comment=Comment)
+
 
 
 
