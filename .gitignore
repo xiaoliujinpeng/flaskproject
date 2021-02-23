@@ -1,1 +1,2 @@
-data-dev.db
+*.db
+*.env
