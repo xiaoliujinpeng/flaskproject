@@ -16,12 +16,12 @@ class BaseConfig(object):
     CKEDITOR_ENABLE_CSRF=True
     CKEDITOR_FILE_UPLOADER='admin.upload_image'
 
-    MAIL_SERVER=os.getenv('SECRET_KEY',"secret string")
+    MAIL_SERVER=os.getenv('MAIL_SERVER')
     MAIL_PORT=465
     MAIL_USE_SSL=True
     MAIL_PASSWORD=os.getenv('MAIL_PASSWORD')
     MAIL_USERNAME=os.getenv('MAIL_USERNAME')
-    MAIL_DEFAULT_SENDER=('Bluelog Admin',MAIL_USERNAME)
+    MAIL_DEFAULT_SENDER=('Admin',MAIL_USERNAME)
 
     BLUELOG_EMAIL=os.getenv('BLUELOG_EMAIL')
     BLUELOG_POST_PER_PAGE=10

@@ -5,11 +5,12 @@
         <div class="card-header">分类</div>
         <ul class="list-group list-group-flush">
             {% for category in categories %}
-                <li class="list-group-item  list-group-item-action d-flex justify-content-between align-items-center">
-                    <a href="{{ url_for('blog.show_category_by_name', name=category.name) }}">
+                <li class="list-group-item  list-group-item-action d-flex justify-content-between align-items-center clear_padding">
+                    <span class="category_nav_icon position-absolute"></span>
+                    <a class="category_nav_a" href="{{ url_for('blog.show_category_by_name', name=category.name) }}">
                         {{ category.name }}
                     </a>
-                    <span class="badge badge-primary badge-pill"> {{ category.posts|length }}</span>
+                    <span class="badge badge-primary badge-pill category_nav_nums"> {{ category.posts|length }}</span>
                 </li>
             {% endfor %}
         </ul>

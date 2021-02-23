@@ -50,6 +50,7 @@ class SettingForm(FlaskForm):
 
 class CategoryForm(FlaskForm):
     name=StringField('Name',validators=[DataRequired(),Length(1,30)])
+
     submit=SubmitField()
     def validate_name(self,field):
         if Category.query.filter_by(name=field.data).first():

@@ -22,7 +22,9 @@ class Admin(db.Model,UserMixin):
 class Category(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     name=db.Column(db.String(30),unique=True)
+    # icon=db.Column(db.String(30))
     posts=db.relationship('Post',back_populates='category')
+
     def delete(self):
         default_category=Category.query.get(1)
         posts=self.posts[:]

@@ -1,3 +1,46 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../icomoon-fonts/icomoon.eot?3de33z');
+  src:  url('../icomoon-fonts/icomoon.eot?3de33z#iefix') format('embedded-opentype'),
+    url('../icomoon-fonts/icomoon.ttf?3de33z') format('truetype'),
+    url('../icomoon-fonts/icomoon.woff?3de33z') format('woff'),
+    url('../icomoon-fonts/icomoon.svg?3de33z#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/*消除列表的内边距*/
+.clear_padding{
+    padding:0;
+}
+
+.category_nav_a{
+    line-height:2.5rem;
+    display:block;
+    text-decoration:none;
+    padding-left:3rem;
+    width:100%;
+}
+.category_nav_nums{
+    position:absolute;
+    right:0.25rem;
+}
+
+.category_nav_icon{
+
+    left:0.6rem;
+
+
+}
+
+.category_nav_icon::before{
+    font-family:"icomoon";
+    content:"\e90d";
+    color:#f5792a;
+    font-size:1.5rem;
+}
+
 nav {
     margin-bottom: 20px;
 }

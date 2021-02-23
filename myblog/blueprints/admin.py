@@ -6,6 +6,7 @@ from myblog.models import Post,Category,Link
 from myblog.utils import redirect_back,allowed_file
 from flask_ckeditor import upload_fail,upload_success
 import os
+import json
 
 admin_bp=Blueprint('admin',__name__)
 
@@ -136,15 +137,10 @@ def manage_category():
 @admin_bp.route('/category/new',methods=['GET','POST'])
 @login_required
 def new_category():
-    form=CategoryForm()
-    if form.validate_on_submit():
-        name=form.name.data
-        category=Category(name=name)
-        db.session.add(category)
-        db.session.commit()
-        flash('Category created','success')
-        return redirect(url_for('.manage_category'))
-    return render_template('admin/new_category.html',form=form)
+    basedir=os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    f=open(basedir+"\\static\\icons.json","r")
+    icons=json.loads(f.read())
+    return render_template('admin/new_category.html',icons=icons)
 
 @admin_bp.route('/category/<int:category_id>/edit',methods=['GET','POST'])
 @login_required

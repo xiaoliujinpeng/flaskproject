@@ -1,9 +1,6 @@
 from flask import Blueprint,render_template,request,current_app,url_for,flash,redirect,abort,make_response
 from myblog.models import Post,Category
-from flask_login import current_user
-from myblog.emails import send_new_reply_email,send_new_comment_email
-# from myblog.forms import CommentForm,AdminCommentForm
-from myblog.extensions import db
+
 from myblog.utils import redirect_back
 
 blog_bp=Blueprint('blog',__name__)
@@ -50,11 +47,6 @@ def show_post_by_name(name):
 @blog_bp.route('/post/<int:post_id>',methods=['GET','POST'])
 def show_post(post_id):
     post=Post.query.get_or_404(post_id)
-    page=request.args.get('page',1,type=int)
-    per_page=current_app.config['BLUELOG_COMMENT_PER_PAGE']
-
-
-
     return render_template('blog/post.html',post=post)
 
 

@@ -21,7 +21,7 @@ def creat_app(config_name=None):
         config_name = os.getenv('FLASK_ENV', 'development')
     app = Flask('myblog')
     app.config.from_object(config[config_name])
-    # register_logging(app)
+
 
     register_extensions(app)
     register_blueprint(app)
@@ -30,6 +30,8 @@ def creat_app(config_name=None):
     register_shell_context(app)
     register_template_context(app)
     register_request_handlers(app)
+    register_logging(app)
+
     return app
 
 def register_blueprint(app):

@@ -1,0 +1,14 @@
+{
+  "icon_blender": ".category_nav_icon::before{content: '\\e905'; color: #f5792a;font-size:1.5rem}",
+  "icon_python": ".category_nav_icon::before{content: '\\e91d'; color: #3776ab;font-size:1.5rem}",
+  "icon_flask": ".category_nav_icon::before{content: '\\e90d';font-size:1.5rem}",
+  "icon_bootstrap": ".category_nav_icon::before{content: '\\e906'; color: #563d7c;font-size:1.5rem}",
+  "icon_git": ".category_nav_icon::before{content: '\\e90e'; color: #f05032;font-size:1.5rem}",
+  "icon_github": ".category_nav_icon::before{content: '\\e90f';font-size:1.5rem;}",
+  "icon_jupyter": ".category_nav_icon::before{content: '\\e911'; color: #f37626;font-size:1.5rem;}",
+  "icon_linux": ".category_nav_icon::before{content: '\\e912'; color: #fcc624;font-size:1.5rem;}",
+  "icon_mysql": ".category_nav_icon::before{content: '\\e917'; color: #4479a1;font-size:1.5rem;}",
+  "icon_tensorflow": ".category_nav_icon::before{content: '\\e91e'; color: #ff6f00;font-size:1.5rem;}",
+  "icon_ubutun": ".category_nav_icon::before{content: '\\e91f'; color: #e95420;font-size:1.5rem;}",
+  "icon_vscode": ".category_nav_icon::before{content: '\\e920'; color: #007acc;font-size:1.5rem;}"
+}
