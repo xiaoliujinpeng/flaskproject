@@ -29,17 +29,49 @@
 
 .category_nav_icon{
 
-    left:0.6rem;
-
-
 }
 
 .category_nav_icon::before{
     font-family:"icomoon";
-    content:"\e90d";
-    color:#f5792a;
-    font-size:1.5rem;
+
 }
+
+
+.icon_heading{
+      padding: 10px 15px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      text-align:center;
+      background:#1E90FF;
+      margin-bottom:0;
+}
+
+.icon_panel_a{
+    padding:15px 0;
+    border-bottom:1px solid #F5F5F5;
+}
+
+
+.icon_panel{
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  padding:15px;
+}
+
+
+#icon_name{
+    background:transparent;border:none;text-align:right;margin-right:1rem;color:#1E90FF;font-size:1.5rem;
+}
+
+
+
+
+
 
 nav {
     margin-bottom: 20px;

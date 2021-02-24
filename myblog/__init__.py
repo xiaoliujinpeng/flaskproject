@@ -4,7 +4,7 @@ from myblog.blueprints.admin import admin_bp
 from myblog.blueprints.blog import blog_bp
 from myblog.blueprints.auth import auth_bp
 from myblog.settings import config
-from myblog.extensions import db,mail,bootstrap,moment,ckeditor,login_manager,csrf
+from myblog.extensions import db,mail,bootstrap,moment,ckeditor,login_manager,csrf,migrate
 from myblog.models import Admin,Category,Post,Link
 from flask_wtf.csrf import CSRFError
 from flask_login import current_user
@@ -47,6 +47,7 @@ def register_extensions(app):
     bootstrap.init_app(app)
     login_manager.init_app(app)
     csrf.init_app(app)
+    migrate.init_app(app,db)
 
 def register_logging(app):
     class RequestFormatter(logging.Formatter):
