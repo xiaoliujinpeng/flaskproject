@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    {{ super() }}
+    {{ dropzone.load_css() }}
+    {{ dropzone.style("margin:20px 0;border:2px dashed #0087F7;background-color:transparent;") }}
+{% endblock %}
+
+{% block content %}
+    {{ dropzone.create(action="admin.upload_files") }}
+    <div class="container">
+        <div class="row">
+            <div class="col-3 card">
+                <img class="card-img-top" src="">
+                <div class="card-body"></div>
+            </div>
+            <div class="col-3"></div>
+            <div class="col-3"></div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    {{ dropzone.load_js() }}
+    {{ dropzone.config(custom_init="this.on('success',function(file){this.removeFile(file)})",custom_options="addRemoveLinks:true,dictRemoveFile:'关闭'") }}
+{% endblock %}
+

@@ -10,5 +10,6 @@
   "icon_mysql": ".category_nav_icon::before{content: '\\\\e917'; color: #4479a1;font-size:1.5rem;}",
   "icon_tensorflow": ".category_nav_icon::before{content: '\\\\e91e'; color: #ff6f00;font-size:1.5rem;}",
   "icon_ubutun": ".category_nav_icon::before{content: '\\\\e91f'; color: #e95420;font-size:1.5rem;}",
-  "icon_vscode": ".category_nav_icon::before{content: '\\\\e920'; color: #007acc;font-size:1.5rem;}"
+  "icon_vscode": ".category_nav_icon::before{content: '\\\\e920'; color: #007acc;font-size:1.5rem;}",
+  "icon_javascript": ".category_nav_icon::before{content: '\\\\e918'; color: #393;font-size:1.5rem;}"
 }

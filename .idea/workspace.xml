@@ -1,7 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b31a25e-282b-4456-8153-0a31b90ba7a8" name="Default Changelist" comment="" />
+    <list default="true" id="7b31a25e-282b-4456-8153-0a31b90ba7a8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/myblog/static/css/cerulean.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/css/sketchy.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/css/superhero.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/assets/fonts/jquery.filer-icons/jquery-filer-preview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/assets/fonts/jquery.filer-icons/jquery-filer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/assets/fonts/jquery.filer-icons/jquery-filer.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/assets/fonts/jquery.filer-icons/jquery-filer.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/assets/fonts/jquery.filer-icons/jquery-filer.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/assets/fonts/jquery.filer-icons/jquery-filer.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/css/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/css/default.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/css/jquery-filer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/css/jquery.filer-dragdropbox-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/css/jquery.filer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/css/normalize.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/css/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/css/themes/jquery.filer-dragdropbox-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/css/tomorrow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/fonts/icomoon.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/fonts/icomoon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/fonts/icomoon.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/fonts/icomoon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/js/bs-custom-file-input.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/js/bs-custom-file-input.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/js/custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/js/jquery-2.1.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/js/jquery.filer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/js/jquery.filer.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/js/prettify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/related/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/filer/related/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/images/blender.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/images/code.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/images/python.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/js/bs-custom-file-input.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/static/js/bs-custom-file-input.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/templates/blog/filer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-dev.db" beforeDir="false" afterPath="$PROJECT_DIR$/data-dev.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/blueprints/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/blueprints/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/blueprints/blog.py" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/blueprints/blog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/extensions.py" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/extensions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/static/icons.json" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/static/icons.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/static/js/_postnav.js" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/static/js/_postnav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/static/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/templates/admin/edit_category.html" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/templates/admin/edit_category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/templates/admin/manage_category.html" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/templates/admin/manage_category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/templates/admin/new_category.html" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/templates/admin/new_category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/templates/admin/new_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/templates/admin/new_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/templates/blog/_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/templates/blog/_sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/templates/blog/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/templates/blog/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/templates/blog/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/templates/blog/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/templates/blog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/templates/blog/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/utils.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,8 +102,15 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/myblog/static/js" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\qazwsx\Desktop\flaskproject\myblog\static\js" />
+      <recent name="C:\Users\qazwsx\Desktop\flaskproject\myblog\static\filer\js" />
+      <recent name="C:\Users\qazwsx\Desktop\flaskproject\myblog\static\css" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
@@ -74,13 +147,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1613990339992" />
+    <state x="423" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614181288347">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="423" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1614181288347" />
     <state x="184" y="6" key="SettingsEditor" timestamp="1613959109465">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1613959109465" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1613982058820">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1615019346726">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1613982058820" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1615019346726" />
   </component>
 </project>

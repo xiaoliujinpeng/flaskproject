@@ -18,13 +18,13 @@
                     <label for="name" class="form-control-label">分类名</label>
                     <input type="text" class="form-control" id="name" name="name" required>
                 </div>
-                <div class="form-group d-flex justify-content-between">
+                <div class="form-group d-flex">
                    <input type="submit" class="btn btn-primary btn-md" id="submit" name="submit" value="提交">
-                    <div class="d-flex">
-                        <input type="text" id="icon_name" name="icon_name"  value="">
-                       <a tabindex="0" id="select_icon_btn" class="btn btn-lg btn-secondary" role="button">
+                    <div class="d-flex" style="flex:1;">
+                        <input type="text" id="icon_name" name="icon_name"  value="" class="form-control" disabled>
+                       <button id="select_icon_btn" class="btn btn-secondary" role="button">
                            选择icon
-                       </a>
+                       </button>
                     </div>
                 </div>
             </form>
@@ -37,7 +37,7 @@
                 <div class="container">
                     <div class="row" >
                         {% for each in icons %}
-                            <a class="col-3 d-flex justify-content-center icon_panel_a" href="#" name="{{each}}"><span class="category_nav_icon {{each}}"></span></a>
+                            <a class="col-3 d-flex justify-content-center icon_panel_a" href="#" name="{{each}}"><span class="{{each}}"></span></a>
                         {% endfor %}
                     </div>
                 </div>

@@ -1,7 +1,8 @@
 from flask import Blueprint,render_template,request,current_app,url_for,flash,redirect,abort,make_response
 from myblog.models import Post,Category
-
-from myblog.utils import redirect_back
+import os
+import base64
+from myblog.utils import redirect_back,get_json
 
 blog_bp=Blueprint('blog',__name__)
 @blog_bp.route('/')
@@ -10,7 +11,9 @@ def index():
     per_page=current_app.config['BLUELOG_POST_PER_PAGE']
     pagination=Post.query.order_by(Post.timestamp.desc()).paginate(page,per_page=per_page)
     posts=pagination.items
-    return render_template('blog/index.html',pagination=pagination,posts=posts)
+    basedir=os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    icons=get_json(basedir+"\\static\\icons.json")
+    return render_template('blog/index.html',pagination=pagination,posts=posts,icons=icons)
 
 @blog_bp.route('/about')
 def about():
@@ -23,7 +26,9 @@ def show_category(category_id):
     per_page=current_app.config['BLUELOG_POST_PER_PAGE']
     pagination=Post.query.with_parent(category).order_by(Post.timestamp.desc()).paginate(page,per_page)
     posts=pagination.items
-    return render_template('blog/category.html',category=category,pagination=pagination,posts=posts)
+    basedir=os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    icons=get_json(basedir+"\\static\\icons.json")
+    return render_template('blog/category.html',category=category,pagination=pagination,posts=posts,icons=icons)
 
 @blog_bp.route("/category/<string:name>")
 def show_category_by_name(name):
@@ -32,7 +37,9 @@ def show_category_by_name(name):
     per_page=current_app.config["BLUELOG_POST_PER_PAGE"]
     pagination=Post.query.with_parent(category).paginate(page,per_page)
     posts=pagination.items
-    return render_template("blog/category.html",category=category,pagination=pagination,posts=posts)
+    basedir=os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    icons=get_json(basedir+"\\static\\icons.json")
+    return render_template("blog/category.html",category=category,pagination=pagination,posts=posts,icons=icons)
 
 
 @blog_bp.route("/post/<string:name>",methods=["GET","POST"])
@@ -50,14 +57,6 @@ def show_post(post_id):
     return render_template('blog/post.html',post=post)
 
 
-# @blog_bp.route('/reply/comment/<int:comment_id>')
-# def reply_comment(comment_id):
-#     comment=Comment.query.get_or_404(comment_id)
-#     if not comment.post.can_comment:
-#         flash('comment is disabled','warning')
-#         return redirect(url_for('.show_post',post_id=comment.post.id))
-#     return redirect(url_for('.show_post',post_id=comment.post_id,reply=comment_id,author=comment.author)+'#commen-form')
-
 @blog_bp.route('/change-theme/<theme_name>')
 def change_theme(theme_name):
     if theme_name not in current_app.config['BLUELOG_THEMES'].keys():
@@ -66,3 +65,7 @@ def change_theme(theme_name):
     response=make_response(redirect_back())
     response.set_cookie('theme',theme_name,max_age=30*24*60*60)
     return response
+
+@blog_bp.route("/filer")
+def filer():
+    return render_template("blog/filer.html")

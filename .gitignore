@@ -1,2 +1,7 @@
 *.db
 *.env
+*.log
+
+migrations/*
+
+files/*

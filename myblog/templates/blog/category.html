@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 {% from 'bootstrap/pagination.html' import render_pagination %}
 
-{% block title %}{{ category.name }}{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <style>
+
+    </style>
+{% endblock %}
 
 {% block content %}
     <div class="page-header">
@@ -17,4 +23,22 @@
             {% include "blog/_sidebar.html" %}
         </div>
     </div>
+{% endblock %}
+{% block scripts %}
+    {{ super() }}
+    <script>
+        $(function(){
+            var style=$("style");
+            var length={{ icons|length }};
+            if(length==0)return false;
+            {% for each in categories %}
+                console.log("{{each.icon}}")
+                {% if each.icon %}
+                    var temp="{{icons[each.icon]|safe}}";
+                    var result=".{{each.icon}}"+"::"+temp.split("::")[1];
+                    style.append(result);
+                {% endif %}
+            {% endfor %}
+        })
+    </script>
 {% endblock %}

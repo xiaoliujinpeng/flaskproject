@@ -28,14 +28,18 @@
 }
 
 .category_nav_icon{
+    position:absolute;
+    left:0.5rem;
 
 }
-
 .category_nav_icon::before{
     font-family:"icomoon";
-
+}
+[class^="icon"]::before{
+    font-family:"icomoon";
 }
 
+/* 图标展示板*/
 
 .icon_heading{
       padding: 10px 15px;
@@ -66,9 +70,21 @@
 
 #icon_name{
     background:transparent;border:none;text-align:right;margin-right:1rem;color:#1E90FF;font-size:1.5rem;
+    flex:1;
 }
 
+/* 图标展示板*/
 
+
+/*头部导航栏添加icon*/
+.nav_index::before{
+    content:"\e925";
+    font-family:"icomoon";
+    font-size:1rem;
+    margin-right:0.2rem;
+}
+
+/*头部导航栏添加icon*/
 
 
 
@@ -79,7 +95,8 @@ nav {
 
 img {
     max-width: 100%;
-    height: auto !important;
+    width:100%;
+    height:auto !important
 }
 
 .inline {

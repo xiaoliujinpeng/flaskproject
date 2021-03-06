@@ -1,3 +1,4 @@
+import json
 
 try:
     from urlparse import urlparse,urljoin
@@ -21,3 +22,8 @@ def redirect_back(default='blog.index',**kwargs):
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.',1)[1].lower() in current_app.config['BLUELOG_ALLOWED_IMAGE_EXTENSIONS']
+
+
+def get_json(filename):
+    f=open(filename,"r")
+    return json.loads(f.read())
