@@ -4,4 +4,4 @@
 
 migrations/*
 
-files/*
+myblog/static/files/*

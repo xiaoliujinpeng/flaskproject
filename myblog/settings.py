@@ -6,6 +6,12 @@ if WIN:
     prefix='sqlite:///'
 else:
     prefix='sqlite:////'
+
+
+class Operations():
+    CONFIRM="confirm"
+    RESET_PASSWORD="reset-password"
+    CHANGE_EMAIL="change-email"
 class BaseConfig(object):
     SECRET_KEY=os.getenv('SECRET_KEY',"no secret_key")
     DEBUG_TB_INTERCEPT_REDIRECTS=False
@@ -22,6 +28,7 @@ class BaseConfig(object):
     MAIL_PASSWORD=os.getenv('MAIL_PASSWORD')
     MAIL_USERNAME=os.getenv('MAIL_USERNAME')
     MAIL_DEFAULT_SENDER=('Admin',MAIL_USERNAME)
+    MAIL_SUBJECT_PREFIX = '[Blog]'
 
     BLUELOG_EMAIL=os.getenv('BLUELOG_EMAIL')
     BLUELOG_POST_PER_PAGE=10

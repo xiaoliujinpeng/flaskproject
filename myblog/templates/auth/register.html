@@ -6,26 +6,26 @@
 {% block content %}
     <div class="container h-100">
         <div class="row h-100 page-header justify-content-center align-items-center">
-            <h1>登录</h1>
+            <h1>注册</h1>
         </div>
         <div class="row h-100 justify-content-center align-items-center">
             <form method="post" class="form col-6" role="form">
-                {{form.csrf_token()}}
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <div class="form-group required">
                     <label class="form-control-label" for="username">姓名</label>
-                    {{ form.username(class="form-control") }}
-
+                    <input name="username" type="text" class="form-control" id="username" value="">
                 </div>
                  <div class="form-group required">
                     <label class="form-control-label" for="password">密码</label>
-                     {{ form.password(class="form-control") }}
+                     <input class="form-control" id="password" name="password" value="">
                 </div>
-                 <div class="form-group form-check">
-                     {{ form.remember(class="form-check-input") }}
-                     <label class="form-check-label" for="remember" required>记住我</label>
+                <div class="form-group required">
+                    <label class="form-control-label" for="email">邮箱</label>
+                    <input class="form-control" id="email" name="email" value="">
                 </div>
                 <button class="btn btn-primary">提交</button>
             </form>
+
         </div>
     </div>
 {% endblock %}
